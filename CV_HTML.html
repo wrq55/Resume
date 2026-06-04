@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waseem Kazi – BI & MIS Manager (Dark Blue Theme)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #eef2f5;
+            font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.45;
+            color: #1a2c3e;
+            padding: 30px 20px;
+        }
+        .resume {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .header {
+            padding: 28px 36px 18px 36px;
+            background: white;
+            border-bottom: 3px solid #002060; /* Dark Blue RGB 0,32,96 */
+        }
+        .name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #002060;
+            letter-spacing: -0.3px;
+        }
+        .title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1e4a76;
+            border-left: 3px solid #002060;
+            padding-left: 12px;
+            margin: 8px 0 12px 0;
+        }
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.8rem;
+            color: #3a5c6e;
+            margin-top: 8px;
+        }
+        .contact-bar i {
+            width: 20px;
+            color: #002060;
+        }
+        .main-content {
+            padding: 24px 36px 36px 36px;
+        }
+        .section {
+            margin-bottom: 26px;
+            page-break-inside: avoid;
+        }
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #002060;
+            border-bottom: 2px solid #d0dbe8;
+            padding-bottom: 5px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .summary {
+            background: #f8fafd;
+            padding: 14px 18px;
+            border-radius: 14px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            border-left: 4px solid #002060;
+        }
+        .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        .col {
+            flex: 1;
+            min-width: 200px;
+        }
+        .comp-list {
+            list-style: none;
+        }
+        .comp-list li {
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+        .comp-cat {
+            font-weight: 700;
+            min-width: 115px;
+            color: #002060;
+        }
+        .achievements-list {
+            padding-left: 22px;
+        }
+        .achievements-list li {
+            margin-bottom: 8px;
+            font-size: 0.86rem;
+        }
+        .job {
+            margin-bottom: 22px;
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+        .job-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #002060;
+        }
+        .company {
+            font-weight: 600;
+            color: #1e4a76;
+            font-size: 0.85rem;
+            margin-left: 6px;
+        }
+        .job-date {
+            font-size: 0.73rem;
+            color: #6b8a9c;
+            font-weight: 500;
+        }
+        .job-duties {
+            margin-left: 20px;
+            padding-left: 6px;
+            list-style-type: disc;
+            font-size: 0.83rem;
+            color: #2c3f4a;
+        }
+        .job-duties li {
+            margin-bottom: 4px;
+        }
+        .note-automation {
+            background: #fff2e6;
+            font-size: 0.68rem;
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 16px;
+            margin-left: 8px;
+            color: #b65c2e;
+        }
+
+        /* HORIZONTAL ROADMAP */
+        .horizontal-roadmap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 16px;
+            margin: 16px 0 8px 0;
+        }
+        .roadmap-step {
+            flex: 1;
+            min-width: 100px;
+            text-align: center;
+            background: #fafcff;
+            border-radius: 16px;
+            padding: 10px 6px;
+            border: 1px solid #dce3ec;
+        }
+        .step-number {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #002060;
+            background: #e8edf5;
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 30px;
+            margin-bottom: 6px;
+        }
+        .step-year {
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: #002060;
+            margin: 6px 0 4px;
+        }
+        .step-role {
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: #1e4a76;
+            line-height: 1.3;
+        }
+        .step-current {
+            background: #f0f4fa;
+            border-color: #002060;
+        }
+        .step-current .step-number {
+            background: #00206020;
+            color: #002060;
+        }
+        .current-badge-small {
+            font-size: 0.6rem;
+            background: #002060;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 20px;
+            margin-left: 4px;
+            display: inline-block;
+        }
+
+        .awards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .award-pill {
+            background: #f0f4fa;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.73rem;
+            font-weight: 500;
+            color: #002060;
+        }
+        .lang-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .resume {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .header, .main-content {
+                padding-left: 0.4in;
+                padding-right: 0.4in;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        @media (max-width: 750px) {
+            .header, .main-content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .horizontal-roadmap {
+                gap: 8px;
+            }
+        }
+    </style>
+    <!-- Font Awesome (optional, for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="resume">
+    <div class="header">
+        <div class="name">WASEEM KAZI</div>
+        <div class="title">BI & MIS Manager | Power BI Developer | Data Analytics Lead</div>
+        <div class="contact-bar">
+            <span><i class="fas fa-phone-alt"></i> +91-9323336555</span>
+            <span><i class="fas fa-envelope"></i> waseem.quazi@gmail.com</span>
+            <span><i class="fas fa-map-marker-alt"></i> Mira Road, Thane, Maharashtra</span>
+            <span><i class="fab fa-linkedin"></i> linkedin.com/in/waseem-kazi/</span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- SUMMARY -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-user-check"></i> Professional Summary</div>
+            <div class="summary">
+                Results-driven BI & MIS Manager with <strong>20+ years of experience</strong> in data analytics, reporting infrastructure, and business intelligence across <strong>SaaS, BPO, Healthcare, and Telecom</strong>. Expert in <strong>Power BI (DAX, Power Query), Advanced Excel, ETL pipelines</strong>, and data warehousing. Proven track record of eliminating 40+ hours weekly manual reporting, cutting processing time by 85%. (Role at Zycus ended Dec 2024 due to automation restructuring.)
+            </div>
+        </div>
+
+        <!-- CORE COMPETENCIES -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-cogs"></i> Core Competencies</div>
+            <div class="two-col">
+                <div class="col">
+                    <ul class="comp-list">
+                        <li><span class="comp-cat">BI & Reporting:</span> Power BI, DAX, Power Query, Dashboards</li>
+                        <li><span class="comp-cat">Data & ETL:</span> ETL Design, Data Warehousing, SQL, Modelling</li>
+                        <li><span class="comp-cat">Excel & Automation:</span> Advanced Excel, VBA, Power Query</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul class="comp-list">
+                        <li><span class="comp-cat">Integrations:</span> Salesforce, ChurnZero, SurveyMonkey, HRMS</li>
+                        <li><span class="comp-cat">Analytics:</span> Workforce, Customer Success, NPS, Churn</li>
+                        <li><span class="comp-cat">Tools:</span> Python, SQL Server, MS Access, Agile</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- KEY ACHIEVEMENTS -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-trophy"></i> Key Achievements</div>
+            <ul class="achievements-list">
+                <li><strong>📊 Data Warehouse & Power BI:</strong> Integrated 7+ sources → 25+ real-time dashboards for 250+ users.</li>
+                <li><strong>⚡ Reporting Automation:</strong> 30+ Power BI reports, saved 40+ hours/week manual effort.</li>
+                <li><strong>🚀 ETL Optimisation:</strong> Python + Power Query → 85% faster, 95% error reduction.</li>
+                <li><strong>📅 Monthly Close (5d → 2d):</strong> Excel financial models on 500K+ rows via Power Query.</li>
+                <li><strong>📈 Retention Analytics:</strong> CS dashboards for 200+ accounts → 15% retention lift.</li>
+                <li><strong>🎯 Payroll Accuracy:</strong> Incentive models for 150 employees → 100% accuracy, zero disputes.</li>
+            </ul>
+        </div>
+
+        <!-- HORIZONTAL ROADMAP -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-road"></i> 20+ Year Career Progression · 2003 – Present</div>
+            <div class="horizontal-roadmap">
+                <div class="roadmap-step"><div class="step-number">01</div><div class="step-year">2003</div><div class="step-role">Customer Care Officer</div></div>
+                <div class="roadmap-step"><div class="step-number">02</div><div class="step-year">2008</div><div class="step-role">MIS Officer</div></div>
+                <div class="roadmap-step"><div class="step-number">03</div><div class="step-year">2010</div><div class="step-role">Sr. MIS Executive</div></div>
+                <div class="roadmap-step"><div class="step-number">04</div><div class="step-year">2018</div><div class="step-role">Sr. MIS Analyst</div></div>
+                <div class="roadmap-step"><div class="step-number">05</div><div class="step-year">2021</div><div class="step-role">Assistant Manager</div></div>
+                <div class="roadmap-step"><div class="step-number">06</div><div class="step-year">2024</div><div class="step-role">Consultant</div></div>
+                <div class="roadmap-step step-current"><div class="step-number">07</div><div class="step-year">2025</div><div class="step-role">Team Lead <span class="current-badge-small">Current</span></div></div>
+            </div>
+            <div style="text-align: center; margin-top: 8px; font-size: 0.7rem; color: #5f7e8c;">
+                Telecom · Healthcare KPO · BPO · SaaS · BPO
+            </div>
+        </div>
+
+        <!-- EMPLOYMENT HISTORY (merged Reliance) -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-briefcase"></i> Employment History</div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div><span class="job-title">MIS Team Lead</span><span class="company">Teleperformance BPO · Thane</span></div>
+                    <div class="job-date">Apr 2025 – Present</div>
+                </div>
+                <ul class="job-duties">
+                    <li>Leading MIS & BI for 500+ seat BPO; automated dashboards, workforce analytics, operational KPIs.</li>
+                    <li>Standardising reporting infrastructure, reducing ad-hoc requests via Power BI layer.</li>
+                    <li>Mentoring junior analysts on Power Query, DAX, Excel automation.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div><span class="job-title">AM / Consultant & Sr MIS Analyst</span><span class="company">Zycus Infotech · Mumbai</span><span class="note-automation">role eliminated Dec 2024 (Automation)</span></div>
+                    <div class="job-date">Jan 2018 – Dec 2024</div>
+                </div>
+                <ul class="job-duties">
+                    <li>End-to-end BI infrastructure for Customer Success & Operations, 250+ users.</li>
+                    <li>Architected Power BI data warehouse with Salesforce, ChurnZero, SurveyMonkey, Wrike, financial systems.</li>
+                    <li>Delivered CS analytics (NPS, health, churn, renewals) across 200+ accounts → 15% retention improvement.</li>
+                    <li>Reduced weekly manual reporting by 40+ hours with 30+ interactive Power BI reports.</li>
+                    <li>Built Excel financial models on 500K+ rows; monthly close 5d → 2d via Power Query.</li>
+                    <li>Designed incentive models for 150+ employees (100% accuracy).</li>
+                    <li>Engineered Python/Power Query ETL pipelines → 85% faster processing.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div><span class="job-title">MIS Executive</span><span class="company">Intelenet Global Services · Mumbai</span></div>
+                    <div class="job-date">Oct 2012 – Dec 2017</div>
+                </div>
+                <ul class="job-duties">
+                    <li>Managed operational MIS, dashboards, SLA tracking, workforce scheduling for BPO.</li>
+                    <li>Best Employee Award 2015, Best Performer 2013/2014.</li>
+                    <li>Introduced Excel macros reducing turnaround by 60%.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div><span class="job-title">Senior MIS Executive</span><span class="company">Inventurus Knowledge Solutions · Mumbai</span></div>
+                    <div class="job-date">Jan 2010 – Oct 2012</div>
+                </div>
+                <ul class="job-duties">
+                    <li>MIS reporting for healthcare KPO; clinical data KPIs, SLA compliance dashboards.</li>
+                    <li>Certificate of Team Excellence (Q1 2010).</li>
+                </ul>
+            </div>
+
+            <!-- MERGED RELIANCE ENTRY (MIS Officer / Sr Process Officer / Customer Care Officer) -->
+            <div class="job">
+                <div class="job-header">
+                    <div><span class="job-title">MIS Officer / Sr Process Officer / Customer Care Officer</span><span class="company">Reliance BPO · Navi Mumbai</span></div>
+                    <div class="job-date">Jul 2003 – Dec 2009</div>
+                </div>
+                <ul class="job-duties">
+                    <li>Progressed from Customer Care Officer to MIS Officer and Sr Process Officer, managing MIS reporting, billing reconciliation, and process performance tracking for telecom operations.</li>
+                    <li>Received Certificate of Appreciation (2008) for data accuracy and reporting innovation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EDUCATION & CERTIFICATIONS -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-graduation-cap"></i> Education & Certifications</div>
+            <ul class="achievements-list" style="list-style-type: disc;">
+                <li><strong>MS Power BI Desktop for Business Intelligence</strong> – Udemy (2024)</li>
+                <li><strong>Automate the Boring Stuff with Python</strong> – Udemy (2023)</li>
+                <li><strong>Bachelor of Commerce (B.Com)</strong> – University of Mumbai (1999–2002)</li>
+                <li><strong>Diploma in Computer Science</strong> – NIIT (1997–1998)</li>
+            </ul>
+        </div>
+
+        <!-- AWARDS -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-medal"></i> Awards & Recognition</div>
+            <div class="awards-grid">
+                <span class="award-pill">DOJO Training Program (2021)</span>
+                <span class="award-pill">Outstanding Achievement – Variable Claims (2020)</span>
+                <span class="award-pill">Best Employee of the Year (2015)</span>
+                <span class="award-pill">Best Performer (2014, 2013)</span>
+                <span class="award-pill">Team Excellence (2010)</span>
+                <span class="award-pill">Certificate of Appreciation (2008)</span>
+            </div>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-language"></i> Languages</div>
+            <div class="lang-list">
+                <span>English (Professional)</span>
+                <span>Hindi (Native)</span>
+                <span>Marathi (Conversational)</span>
+                <span>Urdu (Native)</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
